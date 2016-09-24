@@ -4,7 +4,7 @@ var appRouter = function (app) {
 
     app.post("/login", function (req, res) {
         if (!login(req.body.userID, req.body.password)) {
-            return res.send({"status": "error", "message": "missing a parameter"});
+            return res.send({"status": -1, "message": "missing a parameter"});
         } else {
             return res.send(req.body);
         }
